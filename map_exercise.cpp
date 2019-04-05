@@ -18,10 +18,10 @@ main ()
   std::cout << "initial contents" << std::endl;
   for (auto& jj : m)
     std::cout << jj.first << " " << jj.second << std::endl;
-
-  for (auto jj = m.begin (); jj != m.end (); ++jj)
+std::map<int, double> m2(m);
+  for (auto jj = m2.begin (); jj != m2.end (); ++jj)
     if (jj->second < .5)
-      m.erase (jj);
+      m.erase (jj->first);
 
   std::cout << "final contents" << std::endl;
   for (auto& jj : m)
